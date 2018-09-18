@@ -1,4 +1,4 @@
-  <% session[:cart].each do |item| %>
+  <% @cart.each do |item| %>
     <li><%= item %></li>
   <% end %>
 
@@ -9,8 +9,3 @@
   <input type="submit" name="add to cart" id="add to cart" value="Add to Cart">
 </form>
 
-<ul>
-<%cart.each do |item|%>
-  <li><%=item%></li>
-<%end%>
-</ul>
