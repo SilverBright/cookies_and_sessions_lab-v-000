@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
 
   def index
-    @cart = cart
+    @cart = session[:cart] ||= []
   end
 
   def add
-    session[:cart] << params[:product]
-    redirect_to root_path
+    @cart = session[:cart] << params[:product]
+    render :index
   end
 end
